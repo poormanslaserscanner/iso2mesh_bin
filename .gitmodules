@@ -10,6 +10,6 @@
 [submodule "mpfr_win"]
 	path = win/mpfr
 	url = https://github.com/BrianGladman/mpfr.git
-[submodule "win\\mpir"]
-	path = win\\mpir
+[submodule "win_mpir"]
+	path = win/mpir
 	url = https://github.com/BrianGladman/mpir.git
