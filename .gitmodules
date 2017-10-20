@@ -8,5 +8,5 @@
 	path = zlib
 	url = https://github.com/madler/zlib.git
 [submodule "mpfr_win"]
-	path = mpfr_win
+	path = win/mpfr
 	url = https://github.com/BrianGladman/mpfr.git
