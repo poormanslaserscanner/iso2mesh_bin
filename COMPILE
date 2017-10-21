@@ -2,7 +2,9 @@ On win64:
 	Prerequisites:
 		git
 		cmake
-		Visual Studio
+		Visual Studio 2017
+		Set VC_ROOT to the dir of vcvarsall.bat:
+		set VC_ROOT=d:\bin\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
 
 	clone from git
 		d:
@@ -10,9 +12,7 @@ On win64:
 		cd pmlsgit
 		git clone pmls --recursive
 	compile boost
-		cd pmls\boost
-		bootstrap
-		b2  --build-dir="D:\pmlsgit\build\pmls\boostbuild"
+		build_boost.bat
 		The Boost C++ Libraries were successfully built!
 
 		The following directory should be added to compiler include paths:
@@ -22,3 +22,19 @@ On win64:
 		The following directory should be added to linker library paths:
 
 		    D:\pmlsgit\pmls\boost\stage\lib
+	compile zlib
+		build_zlib.bat
+	Install yasm for Visual Studio ver. x64
+		http://yasm.tortall.net/Download.html
+		mkdir C:\Program Files\yasm
+		copy vsyasm to C:\Program Files\yasm
+		set env: YASMPATH=C:\Program Files\yasm\
+	compile win/mpir
+		build_mpit.bat
+		Cannot fully automate due to a bug in visual studio
+		vs solution files can be used, but fuck me
+	compile win/mpfr
+		build_mpfr.bat
+	
+
+
