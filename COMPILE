@@ -33,8 +33,20 @@ On win64:
 		build_mpit.bat
 		Cannot fully automate due to a bug in visual studio
 		vs solution files can be used, but fuck me
+		set GMPDIR
 	compile win/mpfr
 		build_mpfr.bat
+	compile OpenMesh
+		build_OpenMesh.bat
+	install mkl
+		set MKL_ROOT to mklvars.bat
+	compile CGAL
+		overwrite findBLAS.cmake
+		build-cgal.bat
+Or
+	install OpenBLAS to install/OpenBLAS
+	compile cgal with OpenBLAS
+		build_cgal_OpenBLAS.bat
 	
 
 
