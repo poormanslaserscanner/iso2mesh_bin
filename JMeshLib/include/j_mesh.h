@@ -84,7 +84,11 @@ typedef   signed short	INT16;
 #endif
 
 #ifdef IS64BITPLATFORM
+#ifdef WIN32
+typedef long long j_voidint;
+#else
 typedef long int j_voidint;
+#endif
 #else
 typedef int	 j_voidint;
 #endif 

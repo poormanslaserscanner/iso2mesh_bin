@@ -749,7 +749,8 @@ int Triangulation::saveVerTri(const char *fname)
  char jkkname[256];
 #endif
  FILE *fpv, *fpt;
- int i, i1, i2, i3, a1, a2, a3;
+ j_voidint i;
+ int i1, i2, i3, a1, a2, a3;
  char vername[256], triname[256];
  Node *n;
  Vertex *v;
@@ -804,7 +805,7 @@ int Triangulation::saveVerTri(const char *fname)
 
  ocds = (coord *)malloc(sizeof(coord)*V.numels());
  i=0; FOREACHVERTEX(v, n) ocds[i++] = v->x;
- i=0; FOREACHVERTEX(v, n) v->x = ++i;
+ i=0; FOREACHVERTEX(v, n) v->x = double(++i);
  i=0; FOREACHTRIANGLE(t, n) {i++; t->info = (void *)i;}
 
  fprintf(fpt,"%d\n",T.numels());
@@ -812,7 +813,9 @@ int Triangulation::saveVerTri(const char *fname)
  {
   i1 = (int)(t->v1()->x); i2 = (int)(t->v2()->x); i3 = (int)(t->v3()->x); 
   t1 = t->t1(); t2 = t->t2(); t3 = t->t3();
-  a1 = (t1)?((long int)(t1->info)):(0); a2 = (t2)?((long int)(t2->info)):(0); a3 = (t3)?((long int)(t3->info)):(0);
+  a1 = int((t1)?((j_voidint)(t1->info)):(0)); 
+  a2 = int((t2)?((j_voidint)(t2->info)):(0)); 
+  a3 = int((t3)?((j_voidint)(t3->info)):(0));
   fprintf(fpt,"%d %d %d %d %d %d\n",i1, i2, i3, a1, a2, a3);
  }
  fclose(fpt);

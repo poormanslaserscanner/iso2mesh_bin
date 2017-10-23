@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{69C50092-3F56-4B3B-BD5B-0EA541C14AB2}</ProjectGuid>
+    <RootNamespace>minJMeshLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>obj\</OutDir>
+    <IntDir>obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB; UNICODE; _CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\lib\jmesh.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IS64BITPLATFORM;WIN32;NDEBUG;_LIB; UNICODE; _CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\binTree.h" />
+    <ClInclude Include="..\include\clusterGraph.h" />
+    <ClInclude Include="..\include\dijkstraGraph.h" />
+    <ClInclude Include="..\include\edge.h" />
+    <ClInclude Include="..\include\graph.h" />
+    <ClInclude Include="..\include\heap.h" />
+    <ClInclude Include="..\include\jmesh.h" />
+    <ClInclude Include="..\include\jqsort.h" />
+    <ClInclude Include="..\include\j_mesh.h" />
+    <ClInclude Include="..\include\list.h" />
+    <ClInclude Include="..\include\matrix.h" />
+    <ClInclude Include="..\include\point.h" />
+    <ClInclude Include="..\include\tin.h" />
+    <ClInclude Include="..\include\triangle.h" />
+    <ClInclude Include="..\include\vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\JMESH\jmesh.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\checkAndRepair.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\edge.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\io.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\point.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\tin.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\triangle.cpp" />
+    <ClCompile Include="..\src\MESH_STRUCTURE\vertex.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\binTree.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\clusterGraph.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\dijkstraGraph.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\graph.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\heap.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\jqsort.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\list.cpp" />
+    <ClCompile Include="..\src\PRIMITIVES\matrix.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
