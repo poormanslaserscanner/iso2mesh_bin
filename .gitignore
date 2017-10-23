@@ -1,0 +1,5 @@
+*.sdf
+*.suo
+*.
+/JMeshFix/build
+/JMeshLib/vc9
