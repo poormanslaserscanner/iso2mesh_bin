@@ -22,3 +22,9 @@
 [submodule "OpenMesh"]
 	path = OpenMesh
 	url = https://www.graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh.git
+[submodule "MeshFix"]
+	path = MeshFix
+	url = https://github.com/MarcoAttene/MeshFix-V2.1.git
+[submodule "tetgen"]
+	path = tetgen
+	url = https://github.com/ufz/tetgen.git
