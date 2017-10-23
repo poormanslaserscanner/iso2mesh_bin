@@ -1,0 +1,62 @@
+===================================================================
+=   CGAL Mesh Simplification Code Modified for iso2mesh toolbox   =
+===================================================================
+
+Modified by Qianqian Fang <fangq at nmr.mgh.harvard.edu>
+with help from Fernando Cacciola <fernando.cacciola at geometryfactory.com>
+
+Date: 2008/03
+
+== Summary ==
+Minor changes were added to the original code to cop with the work-flows 
+of iso2mesh. Because "surf2mesh" requires all open edges inside the 
+bounding-box faces, a constrain was added to skip all the open edges 
+during the simplification. The input parameters are also changed 
+to pass the crop factor (a number between 0 and 1) to the code.
+
+In order to make the binary portable, a static target was added
+to the makefile. You can type 
+  make -f makefile.mac static
+or 
+  make -f makefile.linux static
+
+to create the portable binaries. After the compilation, rename 
+the generated edge_collapse_enriched_polyhedron to cgalsimp2.mex??? 
+where "mex???" is the output of mexext function from matlab.
+
+Here is an example to show how to use this program for simplifying
+a surface stored in a OFF file (keep 50% of the surface elements):
+  edge_collapse_enriched_polyhedron cube.off 0.5
+
+
+== Compile and install CGAL ==
+
+In order to compile this code, you have to compile and install CGAL 
+for your system first. CGAL also depends on multiple libraries,
+such as boost and GMP.
+
+Detailed documents for installing CGAL can be found at
+ http://www.cgal.org/
+ http://www.cgal.org/FAQ.html#how_to_install
+ http://www.cgal.org/Manual/3.3/doc_html/installation_manual/Chapter_installation_manual.html
+
+For Debian/Ubuntu, this process can be simple:
+ http://www.cgal.org/FAQ.html#compilation_debian
+
+For Mac OS users, you have to install XTools 2.x fist. It is also 
+hightly suggested to install "fink" (http://www.finkproject.org/)
+which will allow you to install the dependencies easily.
+
+Once you have the dependencies installed, and set the BOOSTROOT 
+pointing to the boost source code dir, you can simply compile 
+the library by the "./install_cgal -i" command as outlined in
+the INSTALL file.
+
+== Compile this code ==
+
+If you have successfully compiled CGAL for your machine, now you just 
+need to copy the files extracted from this package to your 
+CGAL-x.x.x/examples/Surface_mesh_simplication/ folder
+and navigate to that folder and type the make command
+mentioned above, you should be able to get the binary of
+the modified code.
