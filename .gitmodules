@@ -30,4 +30,4 @@
 	url = https://github.com/ufz/tetgen.git
 [submodule "cork"]
 	path = cork
-	url = https://github.com/gilbo/cork.git
+	url = https://github.com/poormanslaserscanner/cork.git
