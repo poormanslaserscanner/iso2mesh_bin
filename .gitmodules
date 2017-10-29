@@ -34,3 +34,6 @@
 [submodule "suitesparse-metis-for-windows"]
 	path = suitesparse-metis-for-windows
 	url = https://github.com/jlblancoc/suitesparse-metis-for-windows.git
+[submodule "superlu"]
+	path = superlu
+	url = https://github.com/xiaoyeli/superlu.git
