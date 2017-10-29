@@ -31,3 +31,6 @@
 [submodule "cork"]
 	path = cork
 	url = https://github.com/poormanslaserscanner/cork.git
+[submodule "suitesparse-metis-for-windows"]
+	path = suitesparse-metis-for-windows
+	url = https://github.com/jlblancoc/suitesparse-metis-for-windows.git
