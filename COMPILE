@@ -5,23 +5,10 @@ On win64:
 		Visual Studio 2017
 		Set VC_ROOT to the dir of vcvarsall.bat:
 		set VC_ROOT=d:\bin\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build
-
+		set PMLS_INSTALL_DIR environment variable where you want to install pmls
 	clone from git
-		d:
-		mkdir pmlsgit
-		cd pmlsgit
-		git clone pmls --recursive
 	compile boost
 		build_boost.bat
-		The Boost C++ Libraries were successfully built!
-
-		The following directory should be added to compiler include paths:
-
-		    D:\pmlsgit\pmls\boost
-
-		The following directory should be added to linker library paths:
-
-		    D:\pmlsgit\pmls\boost\stage\lib
 	compile zlib
 		build_zlib.bat
 	Install yasm for Visual Studio ver. x64
@@ -30,7 +17,7 @@ On win64:
 		copy vsyasm to C:\Program Files\yasm
 		set env: YASMPATH=C:\Program Files\yasm\
 	compile win/mpir
-		build_mpit.bat
+		build_mpir.bat
 		Cannot fully automate due to a bug in visual studio
 		vs solution files can be used, but fuck me
 		set GMPDIR

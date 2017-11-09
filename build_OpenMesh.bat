@@ -1,20 +1,18 @@
 call "%VC_ROOT%\vcvarsall.bat" x64
 
-set BOOST_ROOT=%CD%\..\install\boost\include\boost-1_65_1
-
 mkdir ..\build\OpenMesh
 cd ..\build\OpenMesh
 
 cmake -A x64 -T v141^
- -DCMAKE_INSTALL_PREFIX:PATH="d:/pmlsgit/install/OpenMesh"^
- -DBoost_PYTHON3_LIBRARY_RELEASE:FILEPATH="D:/pmlsgit/install/boost/lib/libboost_python3-vc141-mt-1_65_1.lib"^
+ -DCMAKE_INSTALL_PREFIX:PATH="%PMLS_INSTALL_DIR%/OpenMesh"^
+ -DBoost_PYTHON3_LIBRARY_RELEASE:FILEPATH="%PMLS_INSTALL_DIR%/boost/lib/libboost_python3-vc141-mt-1_65_1.lib"^
  -DCMAKE_BUILD_TYPE:STRING="Release"^
  -DBUILD_APPS:BOOL="0"^
  -DOPENMESH_PYTHON_VERSION:STRING="3.6"^
  -DDISABLE_QMAKE_BUILD:BOOL="1"^
- -DBoost_INCLUDE_DIR:PATH="D:/pmlsgit/install/boost/include/boost-1_65_1"^
+ -DBoost_INCLUDE_DIR:PATH="%PMLS_INSTALL_DIR%\boost\include\boost-1_65_1"^
  -DOPENMESH_BUILD_PYTHON_BINDINGS:BOOL="0" -DOPENMESH_BUILD_UNIT_TESTS:BOOL="0"^
- ..\..\pmls\OpenMesh 
+ ..\..\iso2mesh_bin\OpenMesh 
 
 devenv /build "Release|x64" /project ALL_BUILD OpenMesh.sln
 devenv /build "Release|x64" /project INSTALL OpenMesh.sln
