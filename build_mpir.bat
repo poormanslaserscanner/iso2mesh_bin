@@ -10,27 +10,15 @@ cd win\mpir\build.vc
 mpir_config_all.py 15
 cd ..\build.vc15
 
-goto End
-
-for /d %%d in (.\lib_mpir_*) do (
-call :FooLIB %%d 
-)
+rem goto End
 
 for /d %%d in (.\dll_mpir_*) do (
 call :FooDLL %%d 
 )
 
+
 goto End
 
-:FooLIB
-echo %1
-	set _rres=%1 
-echo rres is %_rres%
-	set _resu=%_rres:~11%
-echo resu is %_resu%
-	call msbuild %_resu% LIB x64 Release
-	move ..\lib\x64 ..\lib\x64_%_resu%
-goto :eof
 
 :FooDLL
 echo %1
@@ -38,7 +26,10 @@ echo %1
 echo rres is %_rres%
 	set _resu=%_rres:~11%
 echo resu is %_resu%
-	call msbuild %_resu% DLL x64 Release
+echo "%_rres:~0,-1%\dll_mpir_%_resu:~0,-1%.vcxproj"
+	devenv /build "Release|x64" /project dll_mpir_%_resu% mpir.sln
+	copy /b %_rres:~0,-1%\dll_mpir_%_resu:~0,-1%.vcxproj +,, %_rres:~0,-1%\dll_mpir_%_resu:~0,-1%.vcxproj
+	devenv /build "Release|x64" /project dll_mpir_%_resu% mpir.sln
 	move ..\dll\x64 ..\dll\x64_%_resu%
 goto :eof
 
