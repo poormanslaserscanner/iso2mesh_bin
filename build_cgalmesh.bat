@@ -1,5 +1,5 @@
 call "%VC_ROOT%\vcvarsall.bat" x64
-call call "%PMLS_INSTALL_DIR%\tbb\bin\tbbvars.bat" intel64
+call "%PMLS_INSTALL_DIR%\tbb\bin\tbbvars.bat" intel64
 
 set GMP_DIR=%PMLS_INSTALL_DIR%\mpir
 set MPFR_DIR=%PMLS_INSTALL_DIR%\mpfr
@@ -45,12 +45,11 @@ cmake -A x64 -T v141  -DCMAKE_INSTALL_PREFIX:PATH="%PMLS_DIR%/cgalmesh"^
  -DWITH_examples:BOOL="1"^
  -DWITH_tests:BOOL="0"^
  ..\..\iso2mesh_bin\cgalmesh
-cmake-gui .
-exit
 
-devenv /build "Release|x64" /project ALL_BUILD CGAL.sln
-devenv /build "Release|x64" CGAL.sln
-devenv /build "Release|x64" /project INSTALL CGAL.sln
+REM cmake-gui .
+REM exit
+
+devenv /build "Release|x64" /project ALL_BUILD Mesh_3_Examples.sln
 
    
 
