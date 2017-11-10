@@ -19,8 +19,14 @@ struct K: public CGAL::Exact_predicates_inexact_constructions_kernel {};
 typedef CGAL::Image_3 Image;
 typedef CGAL::Labeled_image_mesh_domain_3<Image,K> Mesh_domain;
 
+#ifdef CGAL_CONCURRENT_MESH_3
+typedef CGAL::Parallel_tag Concurrency_tag;
+#else
+typedef CGAL::Sequential_tag Concurrency_tag;
+#endif
+
 // Triangulation
-typedef CGAL::Mesh_triangulation_3<Mesh_domain>::type Tr;
+typedef CGAL::Mesh_triangulation_3<Mesh_domain,CGAL::Default,Concurrency_tag>::type Tr;
 typedef CGAL::Mesh_complex_3_in_triangulation_3<Tr> C3t3;
 
 // Mesh Criteria
