@@ -25,12 +25,7 @@ On win64:
 		build_mpfr.bat
 	compile OpenMesh
 		build_OpenMesh.bat
-	install mkl
-		set MKL_ROOT to mklvars.bat
-	compile CGAL
-		overwrite findBLAS.cmake
-		build-cgal.bat
-Or
+
 	install OpenBLAS and intel tbb to PMLS_INSTALL_DIR
 		precompiled binaries available 
 	compile suitesprase:
@@ -39,6 +34,13 @@ Or
 		build_eigen_openblas.bat
 	compile cgal with OpenBLAS
 		build_cgal_OpenBLAS.bat
+	compile cgalmesh
+		build_cgalmesh.bat
+	compile cgalsimp2
+		build_cgalsimp2.bat
+	compile cork
+		build_cork.bat
+	
 	
 
 
