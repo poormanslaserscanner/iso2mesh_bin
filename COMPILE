@@ -31,7 +31,12 @@ On win64:
 		overwrite findBLAS.cmake
 		build-cgal.bat
 Or
-	install OpenBLAS to install/OpenBLAS
+	install OpenBLAS and intel tbb to PMLS_INSTALL_DIR
+		precompiled binaries available 
+	compile suitesprase:
+		build_suitesparse.bat
+	cmake eigen
+		build_eigen_openblas.bat
 	compile cgal with OpenBLAS
 		build_cgal_OpenBLAS.bat
 	
