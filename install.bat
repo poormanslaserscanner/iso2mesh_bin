@@ -10,6 +10,7 @@ copy ..\build\tetgen\Release\tetgen.exe                               %PMLS_INST
 copy %PMLS_INSTALL_DIR%\mpir\mpir.dll                                 %PMLS_INSTALL_DIR%\bin\mpir.dll
 copy %PMLS_INSTALL_DIR%\mpfr\mpfr.dll                                 %PMLS_INSTALL_DIR%\bin\mpfr.dll
 copy %PMLS_INSTALL_DIR%\tbb\bin\intel64\vc14\tbb.dll                  %PMLS_INSTALL_DIR%\bin\tbb.dll
+copy %PMLS_INSTALL_DIR%\tbb\bin\intel64\vc14\tbbmalloc.dll            %PMLS_INSTALL_DIR%\bin\tbbmalloc.dll
 copy %PMLS_INSTALL_DIR%\zlib\bin\zlib.dll                             %PMLS_INSTALL_DIR%\bin\zlib.dll
 
 
